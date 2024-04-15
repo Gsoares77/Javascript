@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combinar cores em JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #miElemento {
+      width: 200px;
+      height: 200px;
+      background-color: #3498db;
+      color: #fff;
+      text-align: center;
+      line-height: 200px;
+      margin: 20px;
+    }
+
+    #cambiarColorBtn {
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div id="miElemento">Cliqui para Mudar a cor</div>
+<button id="cambiarColorBtn">Cambinar cores</button>
+
+<script>
+  // Obtener referencias a elementos del DOM
+  var miElemento = document.getElementById('miElemento');
+  var cambiarColorBtn = document.getElementById('cambiarColorBtn');
+
+  // Función para cambiar el color de fondo
+  function cambiarColor() {
+    var nuevosColores = ['#e74c3c', '#2ecc71', '#f39c12', '#9b59b6', '#3498db'];
+    var nuevoColor = nuevosColores[Math.floor(Math.random() * nuevosColores.length)];
+    miElemento.style.backgroundColor = nuevoColor;
+  }
+
+  // Agregar un evento de clic al botón
+  cambiarColorBtn.addEventListener('click', cambiarColor);
+</script>
+
+</body>
+</html>
