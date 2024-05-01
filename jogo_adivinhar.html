@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Adivinhação</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: rgb(171, 185, 17);
+            margin: 0%;
+            padding: 0%;
+        }
+     body {
+        background-color: rgb(22, 20, 20);
+     }
+      button {
+        background-color: rgb(200, 212, 19);
+      }
+      
+    
+       
+    
+    </style>
+</head>
+<body>
+
+    <h1>Jogo de Adivinhação</h1>
+    <p>Tente adivinhar o número entre 1 e 10.</p>
+    <input type="number" id="guessInput" placeholder="Digite sua resposta">
+    <button onclick="checkGuess()">Verificar</button>
+    <p id="message"></p>
+
+    <script>
+        // Número aleatório entre 1 e 10
+        const randomNumber = Math.floor(Math.random() * 10) + 1;
+        
+        function checkGuess() {
+            // Obter o valor digitado pelo jogador
+            const guess = document.getElementById('guessInput').value;
+
+            // Verificar se adivinhou corretamente
+            if (guess == randomNumber) {
+                document.getElementById('message').innerText = 'Parabéns! Você adivinhou corretamente!';
+            } else {
+                document.getElementById('message').innerText = `Errado. O número correto era ${randomNumber}. Tente novamente!`;
+            }
+        }
+
+        
+    </script>
+
+</body>
+</html>
